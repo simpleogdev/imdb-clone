@@ -27,7 +27,6 @@ const MoviePage = async ({ params }) => {
           placeholder="blur"
           blurDataURL="/spinner.svg"
           alt={movie.title}
-          quality={100}
           priority
         />
         <div className="px-6">
