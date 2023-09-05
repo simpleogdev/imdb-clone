@@ -2,15 +2,17 @@ import Link from "next/link";
 import Image from "next/image";
 import FetchPopular from "../api/FetchPopular";
 import { AiOutlineLike } from "react-icons/ai";
+import { revalidatePath } from "next/cache";
 
 const Main = async () => {
   const data = await FetchPopular();
+  revalidatePath(data)
   return (
     <div className="sm:grid my-5 flex max-w-[1100px] mx-auto mt-5 mb-10 xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2  flex-col sm:items-center sm:justify-center gap-5 grid-rows-4 overflow-hidden">
       {data.map((item) => {
         return (
           <Link
-          href={`/movie/${item.id}`}
+            href={`/movie/${item.id}`}
             key={item.id}
             className=" pb-5 cursor-pointer hover:shadow-slate-400 hover:shadow-md transition dark:border-gray-500 border-gray-200 rounded-lg border-2 flex flex-col  justify-center"
           >
