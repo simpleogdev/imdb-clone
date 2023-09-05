@@ -27,7 +27,6 @@ const Main = async () => {
               blurDataURL="/spinner.svg"
               alt={item.title}
               priority
-              quality={100}
             />
             <p className="line-clamp-2  mx-3 mt-2  font-medium">{item.overview}</p>
             <p className="line-clamp-1 mx-3 mt-1 text-lg font-bold">{item.title}</p>
