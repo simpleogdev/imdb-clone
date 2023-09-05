@@ -1,4 +1,4 @@
-import Main from "./(shared)/Main";
+import Main from "./(home)/Main";
 
 export default function Home() {
   return (

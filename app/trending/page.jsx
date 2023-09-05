@@ -31,6 +31,8 @@ const Trending = async () => {
               placeholder="blur"
               blurDataURL="/spinner.svg"
               alt={item.title}
+              quality={100}
+              priority
             />
             <p className="line-clamp-2  mx-3 mt-2  font-medium ">
               {item.overview}

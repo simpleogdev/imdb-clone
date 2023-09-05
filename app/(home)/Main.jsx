@@ -6,7 +6,7 @@ import { AiOutlineLike } from "react-icons/ai";
 const Main = async () => {
   const data = await FetchPopular();
   return (
-    <div className="sm:grid flex max-w-[1100px] mx-auto mt-5 mb-10 xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2  flex-col sm:items-center sm:justify-center gap-5 grid-rows-4 overflow-hidden">
+    <div className="sm:grid my-5 flex max-w-[1100px] mx-auto mt-5 mb-10 xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2  flex-col sm:items-center sm:justify-center gap-5 grid-rows-4 overflow-hidden">
       {data.map((item) => {
         return (
           <Link
@@ -24,6 +24,8 @@ const Main = async () => {
               placeholder="blur"
               blurDataURL="/spinner.svg"
               alt={item.title}
+              priority
+              quality={100}
             />
             <p className="line-clamp-2  mx-3 mt-2  font-medium">{item.overview}</p>
             <p className="line-clamp-1 mx-3 mt-1 text-lg font-bold">{item.title}</p>
